@@ -1,5 +1,5 @@
 // 1. PASTE YOUR API KEY HERE
-const API_KEY = "AIzaSyCbFhmccvZ6EuOzj5b5gfk2nYpsyWe0iRY"; 
+const API_KEY = "AIzaSyC-qmD1kyVT7H9j5r-3wW_nXigBHHot-Ks"; 
 
 const tabTC = document.getElementById("tabTC");
 const tabSite = document.getElementById("tabSite");
