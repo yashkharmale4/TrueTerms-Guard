@@ -176,4 +176,5 @@ function setCard(cardId, valId, text, isSafe) {
     const card = document.getElementById(cardId);
     if(isSafe) { card.classList.add("border-green"); card.classList.remove("border-red"); }
     else { card.classList.add("border-red"); card.classList.remove("border-green"); }
+
 }
