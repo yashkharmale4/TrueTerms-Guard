@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { width: 320px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0f172a; color: white; margin: 0; padding: 0; }
+        
+        /* Compact Tabs */
+        .tabs { display: flex; background: #1e293b; border-bottom: 1px solid #334155; }
+        .tab { flex: 1; padding: 10px; text-align: center; cursor: pointer; font-size: 11px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tab.active { color: #38bdf8; border-bottom: 2px solid #38bdf8; background: #0f172a; }
+
+        .content { padding: 12px; display: none; }
+        .content.active { display: block; }
+
+        /* --- THE DASHBOARD --- */
+        .verdict-banner { 
+            text-align: center; padding: 8px; border-radius: 4px; font-weight: 800; font-size: 14px; margin-bottom: 12px; 
+            background: #334155; color: #cbd5e1; /* Gray Default */
+        }
+        
+        /* The Grid: 2 Columns, Tiny Gap */
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+        
+        .stat-card { background: #1e293b; padding: 8px; border-radius: 4px; border-left: 3px solid #64748b; }
+        .stat-label { font-size: 9px; color: #94a3b8; display: block; margin-bottom: 2px; text-transform: uppercase; }
+        .stat-value { font-size: 10px; font-weight: bold; color: #e2e8f0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* Tiny Tags for Data/Perms */
+        .tags-area { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+        .chip { padding: 3px 6px; border-radius: 4px; font-size: 9px; font-weight: bold; background: #334155; color: #cbd5e1; border: 1px solid #475569; }
+        
+        /* Color Classes for JS to use */
+        .chip.risk { background: #451a1a; border-color: #ef4444; color: #fca5a5; }
+        .chip.safe { background: #14532d; border-color: #22c55e; color: #86efac; }
+        .border-red { border-left-color: #ef4444 !important; }
+        .border-green { border-left-color: #22c55e !important; }
+
+        /* Buttons */
+        button { width: 100%; padding: 10px; background: #38bdf8; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 11px; margin-top: 10px; }
+        button:hover { background: #0ea5e9; }
+        .status { text-align: center; font-size: 9px; color: #64748b; margin-top: 6px; height: 12px; }
+
+        /* T&C Specifics */
+        ul { padding-left: 20px; margin: 0; font-size: 11px; color: #cbd5e1; }
+        li { margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+
+    <div class="tabs">
+        <div class="tab active" id="tabTC">⚖️ Legal</div>
+        <div class="tab" id="tabSite">🛡️ Site Safety</div>
+    </div>
+
+    <div id="viewTC" class="content active">
+        <div id="tcBanner" class="verdict-banner">-- / 10 RISK</div>
+        <ul id="tcList"><li>Scan to find traps...</li></ul>
+        <button id="btnScanTC">SCAN AGREEMENT</button>
+        <div id="statusTC" class="status"></div>
+    </div>
+
+    <div id="viewSite" class="content">
+        <div id="siteVerdict" class="verdict-banner">UNKNOWN</div>
+
+        <div class="stats-grid">
+            <div class="stat-card" id="cardProto">
+                <span class="stat-label">Security</span>
+                <span class="stat-value" id="valProto">--</span>
+            </div>
+            <div class="stat-card" id="cardIdentity">
+                <span class="stat-label">Identity</span>
+                <span class="stat-value" id="valIdentity">--</span>
+            </div>
+            <div class="stat-card" id="cardDest" style="grid-column: span 2;">
+                <span class="stat-label">Forms Send Data To</span>
+                <span class="stat-value" id="valDest">--</span>
+            </div>
+        </div>
+
+        <div class="stat-label">Detected Inputs & Permissions:</div>
+        <div id="riskTags" class="tags-area">
+            <span class="chip">Ready to scan</span>
+        </div>
+
+        <button id="btnScanSite" style="background: #f59e0b; color: #000;">RUN FORENSICS</button>
+        <div id="statusSite" class="status"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+body {
+  width: 320px;
+  background-color: #0f172a; /* Dark Navy */
+  color: #e2e8f0;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0; padding: 0;
+}
+
+.header {
+  background: #1e293b;
+  padding: 15px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid #334155;
+}
+
+.logo { font-weight: bold; color: #38bdf8; }
+.badge { background: #059669; color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; }
+
+.dashboard { padding: 15px; }
+
+.score-container { display: flex; justify-content: center; margin-bottom: 15px; }
+.risk-circle {
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  border: 4px solid #475569;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+#scoreValue { font-size: 28px; font-weight: bold; }
+.label { font-size: 10px; color: #94a3b8; }
+
+.card {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #334155;
+}
+h3 { margin: 0 0 5px 0; font-size: 12px; color: #94a3b8; text-transform: uppercase; }
+ul { padding-left: 20px; margin: 0; font-size: 13px; }
+li { margin-bottom: 4px; }
+
+.autopay-section { border-left: 4px solid #475569; }
+.danger { border-color: #ef4444 !important; color: #fca5a5; }
+.safe { border-color: #22c55e !important; }
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button:hover { background: #0ea5e9; }
+.status-text { text-align: center; font-size: 12px; margin-bottom: 10px; color: #64748b; }
