@@ -31,10 +31,10 @@
 
 ## 📸 Screenshots
 
-![Legal Scan](LINK_TO_IMAGE_1)
+![Legal Scan](screenshot1.png)
 *Legal Scan Mode detecting risky clauses*
 
-![Site Safety](LINK_TO_IMAGE_2)
+![Site Safety](screenshot2.png)
 *Forensic Dashboard analyzing site security*
 
 ## 📄 License
